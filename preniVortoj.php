@@ -8,7 +8,7 @@ $vorto = $_GET['vorto']; // Get the Word from Outer Space and Search for it!
 
 if (isset($vorto))
 	{
-	echo $vorto;
+	echo " Your Direct search was " . $vorto .  ' </br> '; 
 	} else {
 		$Help = "No Vorto -> add ?vorto=TheWordYouWant to the end of this website";
 		echo $Help;
@@ -24,25 +24,18 @@ $AVurl1 = "http://vortaro.us.to/ajax/epo/eng/";
 $AVurl2 = "/?callback=";
 $AVfinalurl= $AVurl1 . $vorto . $AVurl2;
 
-echo $AVfinalurl . ' </br> '; // DEBUG CODE 
 
 $AVcontent = file_get_contents($AVfinalurl) ;
-echo $AVcontent . ' </br> ';   // DEBUG CODE 
-
 
 // Now we need to trim the () jsonp to json
 $AVcontent = substr($AVcontent, 1);
 $AVcontent = substr($AVcontent,0,-1);
 
-//AVDecode = json_decode($AVcontent);
-
-
-
-
-
-
-$AVDecode = (json_decode($AVcontent));
+$AVDecode = json_decode($AVcontent);
+// $AVDecode = (json_decode($AVcontent)); // Doesn't seem to matter which way
 print_r($AVDecode);
+
+
 /* 
 
 // /* 
@@ -67,6 +60,9 @@ print_r(json_decode($AVcontent));
 // jsonp?
 
 // echo $AVcontent;
+echo $AVfinalurl . ' </br> '; // DEBUG CODE 
+echo $AVcontent . ' </br> ';   // DEBUG CODE 
+
 
 */
 

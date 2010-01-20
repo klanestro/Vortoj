@@ -30,14 +30,21 @@ $AVcontent = file_get_contents($AVfinalurl) ;
 echo $AVcontent . ' </br> ';   // DEBUG CODE 
 
 
+// Now we need to trim the () jsonp to json
+$AVcontent = substr($AVcontent, 1);
+$AVcontent = substr($AVcontent,0,-1);
+
+//AVDecode = json_decode($AVcontent);
 
 
 
-// $AVDecode ="What the ";
- $AVDecode = json_decode($AVcontent);
- print_r(json_decode($AVcontent));
 
- 
+
+
+$AVDecode = (json_decode($AVcontent));
+print_r($AVDecode);
+/* 
+
 // /* 
  	if(isset( $AVcontent)) { 									// DEBUG CODE
  	echo "json_decode set AVcontent" . ' </br> ';
@@ -50,14 +57,18 @@ echo $AVcontent . ' </br> ';   // DEBUG CODE
  	} else {
  	echo "Not Empty". ' </br> ';
  	}
+print_r(json_decode($AVcontent));
 
-echo $AVDecode . ' </br> ';
-$JError = json_last_error();
-echo $JError;
-// */
+
+// echo $AVDecode . ' </br> ';
+// 
  
 // Why can't I echo or access information with $AVDecode? Is it something with
 // jsonp?
+
+// echo $AVcontent;
+
+*/
 
 ?>
 

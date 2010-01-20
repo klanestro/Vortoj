@@ -15,35 +15,49 @@ if (isset($vorto))
 	}
 	
 
-//$v =  fopen("http://vortaro.us.to/ajax/epo/eng/' + $vorto + '/?callback=?', "r");
 
-
-// Now Lets Search Alex's Vortareo
+// Now Lets Search Alex's Vortaro, It uses jsonp
 //	ex. http://vortaro.us.to/ajax/epo/eng/petas/?callback=?
 // Future Feature inproved language functinality
 
-$url1 = "http://vortaro.us.to/ajax/epo/eng/"; 
-$url2 = "/?callback=?";
-$finalurl= $url1 . $vorto . $url2;
-echo $finalurl;
-echo "<br>";
+$AVurl1 = "http://vortaro.us.to/ajax/epo/eng/"; 
+$AVurl2 = "/?callback=";
+$AVfinalurl= $AVurl1 . $vorto . $AVurl2;
 
-$content =file_get_contents($finalurl) ;
-echo $content;
+echo $AVfinalurl . ' </br> '; // DEBUG CODE 
 
-/*
-
-$v1 = fopen($finalurl ,"r");
-echo $v1;
+$AVcontent = file_get_contents($AVfinalurl) ;
+echo $AVcontent . ' </br> ';   // DEBUG CODE 
 
 
-$frv1 = fread($v1,filesize($v1));
-echo $frv1 ;
 
-//$Help2 = "did echo v1 does internet work?";
 
-//echo $Help2;
-*/
+
+// $AVDecode ="What the ";
+ $AVDecode = json_decode($AVcontent);
+ print_r(json_decode($AVcontent));
+
+ 
+// /* 
+ 	if(isset( $AVcontent)) { 									// DEBUG CODE
+ 	echo "json_decode set AVcontent" . ' </br> ';
+ 	} else {
+ 	echo "something fishy here" . ' </br> ';
+ 	}
+ 	
+ if (empty($AVcontent)){
+ 	echo "EMPTY EMPTY" . ' </br> ';
+ 	} else {
+ 	echo "Not Empty". ' </br> ';
+ 	}
+
+echo $AVDecode . ' </br> ';
+$JError = json_last_error();
+echo $JError;
+// */
+ 
+// Why can't I echo or access information with $AVDecode? Is it something with
+// jsonp?
 
 ?>
 

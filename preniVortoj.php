@@ -10,7 +10,7 @@ if (isset($vorto))
 	{
 	echo " Your Direct search was " . $vorto .  ' </br> '; 
 	} else {
-		$Help = "No Vorto -> add "" ?vorto=TheWordYouWant"" to the end of this website";
+		$Help = "No Vorto -> add ?vorto=TheWordYouWant to the end of this website";
 		echo $Help;
 	}
 	

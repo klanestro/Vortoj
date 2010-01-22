@@ -57,7 +57,6 @@ function getphp_AlexVortaro ($vorto)
 
 function getphp_Smartfm($vorto)
 	{
-		echo 'smartttt';
 		$SFurl="http://api.smart.fm/items/matching/";
 		// $SFurl2=urlencode($vorto); // +".json";
 		$SFurl3="?language=eo&translation_language=en";
@@ -66,19 +65,56 @@ function getphp_Smartfm($vorto)
 		$SFcontent = file_get_contents($SFfinalurl);
 		$SFDecode = json_decode($SFcontent);
 
-		// make this smart
 		return ($SFDecode);
 	}
 	
-
-// print_r(getphp_AlexVortaro ($vorto));
+		
 $AVvorto = getphp_AlexVortaro ($vorto);
-$AVvortoshow = $AVvorto->text;
-echo $AVvortoshow;
-
-print_r(getphp_Smartfm($vorto));
+$SFvorto = getphp_Smartfm($vorto);
 
 
+
+function showphp_AlexVortaro ($AVvorto)
+	{
+	$AVvortoshow = $AVvorto->text;
+	echo $AVvortoshow;
+	
+	}
+
+showphp_AlexVortaro ($AVvorto);
+
+
+// smart.fm gives you lot of information so lets grab what we want
+function showphp_Smartfm($SFvorto)
+	{
+		// $objects is the array with all those objects
+		foreach($objects as $object)
+			{
+ 				 echo $object->cue->language; // language
+
+ 					// if there are no quizzes, we skip the part below
+  					// we skip it because $object->quizzes will produce a warning or a notice
+					// if "quizess" is not a member of the $object
+ 				 if(!isset($object->quizzes)) 
+ 				 {
+ 				 continue;
+ 				 }
+/*
+  // quizess
+  for($object->quizzes as $quiz)
+  {
+    echo $quiz->question; // question
+    echo $quiz->answer; // answer
+  }
+  */
+}
+
+	//	print_r($SFvorto);
+		
+	}
+
+
+showphp_Smartfm($SFvorto);
 
 ?>
 

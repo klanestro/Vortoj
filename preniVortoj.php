@@ -92,7 +92,7 @@ foreach($SFvorto as $object)
 {
   echo $object->cue->language; // language
 
-  foreach($objet->responses as $response)
+  foreach($object->responses as $response)
   {
     // if there are no quizzes, we skip the part below
     // we skip it because $object->quizzes will produce a warning or a notice

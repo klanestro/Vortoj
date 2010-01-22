@@ -11,7 +11,7 @@ $vorto = $_GET['vorto']; // Get the Word from Outer Space and Search for it!
 
 if (isset($vorto))
 	{
-	echo " Your Direct search was " . $vorto .  ' </br> '; 
+	echo " Your Direct search was " . $vorto .  ' <br></br> '; 
 	} else {
 		$Help = "No Vorto -> add ?vorto=TheWordYouWant to the end of this website";
 		echo $Help;
@@ -28,6 +28,9 @@ if (isset($vorto))
 // #Plans for (	traduku.net, tn
 //				:apertium.org,ap // I think its apertium.org
 //				:reto-vartaro,rv 
+// 						each root word has an xml file,  but how to you find this xml file?
+//						there is a xml link on the bottom of a search result,  but I can't figure 
+//						out a way to get to this info.
 //				:project gutenburg, pg
 //				:google books, gb
 //  BUT NEXT UP ЄЭ smart.fm  
@@ -49,11 +52,6 @@ function getphp_AlexVortaro ($vorto)
 		$AVDecode = json_decode($AVcontent);
 		
 		return ($AVDecode);
-//		print_r($AVDecode);
-
-//		echo '<br></br>';
-//		echo $AVDecode ->text;
-//		echo '<br></br>';
 	}
 
 
@@ -69,12 +67,15 @@ function getphp_Smartfm($vorto)
 		$SFDecode = json_decode($SFcontent);
 
 		// make this smart
-//		print_r($SFDecode);	
 		return ($SFDecode);
 	}
 	
-	
-print_r(getphp_AlexVortaro ($vorto));
+
+// print_r(getphp_AlexVortaro ($vorto));
+$AVvorto = getphp_AlexVortaro ($vorto);
+$AVvortoshow = $AVvorto->text;
+echo $AVvortoshow;
+
 print_r(getphp_Smartfm($vorto));
 
 

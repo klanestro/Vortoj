@@ -88,7 +88,7 @@ showphp_AlexVortaro ($AVvorto);
 function showphp_Smartfm($SFvorto)
 	{
 		// $objects is the array with all those objects
-		foreach($objects as $object)
+		foreach($SFvorto as $object)
 			{
  				 echo $object->cue->language; // language
 
@@ -99,15 +99,15 @@ function showphp_Smartfm($SFvorto)
  				 {
  				 continue;
  				 }
-/*
-  // quizess
-  for($object->quizzes as $quiz)
-  {
-    echo $quiz->question; // question
-    echo $quiz->answer; // answer
-  }
-  */
-}
+/*  Still does not work
+ 				 // quizess
+ 				 for($Sfvorto->quizzes as $quiz)
+ 					 {
+  					 	echo $quiz->question; // question
+ 						echo $quiz->answer; // answer
+  					}
+ */
+				}
 
 	//	print_r($SFvorto);
 		

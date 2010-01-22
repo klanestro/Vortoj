@@ -84,29 +84,34 @@ function showphp_AlexVortaro ($AVvorto)
 showphp_AlexVortaro ($AVvorto);
 
 
-// this is directly from http://pastie.org/789689
+
 function showphp_Smartfm($SFvorto)
 {
-    // $objects is the array with all those objects
-    foreach($SFvorto as $object)
-    {
-        echo $object->cue->language; // language
+   // $objects is the array with all those objects
+foreach($SFvorto as $object)
+{
+  echo $object->cue->language; // language
 
-        // if there are no quizzes, we skip the part below
-        // we skip it because $object->quizzes will produce a warning or a notice
-        // if "quizess" is not a member of the $object
-        if(!isset($object->quizzes))
-        {
-            continue;
-        }
-        // Still does not work not echoing Echo - ★✩
-        // quizess
-        foreach($object->quizzes as $quiz)
-        {
-            echo $quiz->question; // question
-            echo $quiz->answer; // answer
-        }
+  foreach($objet->responses as $response)
+  {
+    // if there are no quizzes, we skip the part below
+    // we skip it because $object->quizzes will produce a warning or a notice
+    // if "quizess" is not a member of the $object
+    if(!isset($object->quizzes))
+    {
+      continue;
     }
+
+    // quizess
+    foreach($response->quizzes as $quiz)
+    {
+      echo $quiz->question; // question
+      echo $quiz->answer; // answer
+    }
+  }
+}
+   
+   
 }
 
 // smart.fm gives you lot of information so lets grab what we want

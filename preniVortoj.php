@@ -3,6 +3,9 @@
 
 <?php
 // Created by Talisman 01/2010 ★✩ 
+error_reporting(E_ALL);
+ini_set('display_errors', TRUE);
+ini_set('display_startup_errors', TRUE);
 
 $vorto = $_GET['vorto']; // Get the Word from Outer Space and Search for it!
 
@@ -97,17 +100,27 @@ foreach($SFvorto as $object)
     // if there are no quizzes, we skip the part below
     // we skip it because $object->quizzes will produce a warning or a notice
     // if "quizess" is not a member of the $object
-    if(!isset($object->quizzes))
+    if(!isset($object->responses))
     {
       continue;
     }
+// print_r($response);  //works
+// print_r($response->quizzes); //works
 
-    // quizess
-    foreach($response->quizzes as $quiz)
+foreach($response->quizzes as $quiz)
     {
       echo $quiz->question; // question
       echo $quiz->answer; // answer
+      echo '<br></br>';
     }
+    // quizess
+    /*
+    foreach($response->quizzes as $quiz)
+    {
+      echo $quiz->question; 
+      echo $quiz->answer; 
+    }
+    */
   }
 }
    
@@ -151,6 +164,7 @@ function showphp_Smartfm($SFvorto)
 
 
 showphp_Smartfm($SFvorto);
+// print_r($SFvorto);
 
 ?>
 

@@ -1,0 +1,139 @@
+// 	var_export($SFvorto);
+
+
+  0 => 
+  stdClass::__set_state(array(
+     'type' => 'text',
+     'cue' => 
+    stdClass::__set_state(array(
+       'type' => 'text',
+       'text' => 'helpi',
+       'sound' => NULL,
+       'language' => 'eo',
+       'part_of_speech' => 'Verb',
+    )),
+     'responses' => 
+    array (
+      0 => 
+      stdClass::__set_state(array(
+         'type' => 'meaning',
+         'text' => 'to help (v)',
+         'sound' => 'http://assets3.smart.fm/assets/generated_sounds/2009112222/8964e5386b38b66b31f0fa70a70e9f95.mp3',
+         'language' => 'en',
+         'quizzes' => 
+        array (
+          0 => 
+          stdClass::__set_state(array(
+             'type' => 'multiple_choice',
+             'answer' => 'helpi',
+             'question' => 'to help (v)',
+          )),
+        ),
+      )),
+    ),
+     'author' => 
+    stdClass::__set_state(array(
+       'profile' => 
+      stdClass::__set_state(array(
+         'name' => 'AriadneAranea',
+         'profile_url' => 'http://smart.fm/users/AriadneAranea',
+         'icon_url' => 'http://a1.twimg.com/profile_images/489977042/2009-01_-_New_Year_at_Slimbridge_02_bigger.jpg',
+      )),
+       'username' => 'AriadneAranea',
+    )),
+     'language' => 'eo',
+     'dc_creator' => 'AriadneAranea',
+     'href' => 'http://smart.fm/items/1773772',
+     'id' => 1773772,
+  )),
+  1 => 
+  stdClass::__set_state(array(
+     'type' => 'text',
+     'cue' => 
+    stdClass::__set_state(array(
+       'type' => 'text',
+       'text' => 'helpi',
+       'sound' => NULL,
+       'language' => 'eo',
+       'part_of_speech' => 'Verb',
+    )),
+     'responses' => 
+    array (
+      0 => 
+      stdClass::__set_state(array(
+         'type' => 'meaning',
+         'text' => 'help, assist',
+         'sound' => 'http://assets3.smart.fm/assets/generated_sounds/2009082004/92394f540999467f5f60e54f67fe2603.mp3',
+         'language' => 'en',
+         'quizzes' => 
+        array (
+          0 => 
+          stdClass::__set_state(array(
+             'type' => 'multiple_choice',
+             'answer' => 'helpi',
+             'question' => 'help, assist',
+          )),
+        ),
+      )),
+    ),
+     'author' => 
+    stdClass::__set_state(array(
+       'profile' => 
+      stdClass::__set_state(array(
+         'name' => 'RoÄ‰jochanchen',
+         'profile_url' => 'http://smart.fm/users/gyrus',
+         'icon_url' => 'http://assets1.smart.fm/assets/users/gyrus/f150a798_medium.jpg',
+      )),
+       'username' => 'gyrus',
+    )),
+     'language' => 'eo',
+     'dc_creator' => 'gyrus',
+     'href' => 'http://smart.fm/items/1708419',
+     'id' => 1708419,
+  )),
+  2 => 
+  stdClass::__set_state(array(
+     'type' => 'text',
+     'cue' => 
+    stdClass::__set_state(array(
+       'type' => 'text',
+       'text' => 'helpi',
+       'sound' => NULL,
+       'language' => 'eo',
+       'part_of_speech' => 'None',
+    )),
+     'responses' => 
+    array (
+      0 => 
+      stdClass::__set_state(array(
+         'type' => 'meaning',
+         'text' => 'to help',
+         'sound' => 'http://assets1.smart.fm/assets/generated_sounds/2009031708/7c1fb6e65fa658f7a9ded04150305beb.mp3',
+         'language' => 'en',
+         'quizzes' => 
+        array (
+          0 => 
+          stdClass::__set_state(array(
+             'type' => 'multiple_choice',
+             'answer' => 'helpi',
+             'question' => 'to help',
+          )),
+        ),
+      )),
+    ),
+     'author' => 
+    stdClass::__set_state(array(
+       'profile' => 
+      stdClass::__set_state(array(
+         'name' => 'Talisman',
+         'profile_url' => 'http://smart.fm/users/klanestro',
+         'icon_url' => 'http://assets1.smart.fm/assets/users/klanestro/b1500778_medium.jpg',
+      )),
+       'username' => 'klanestro',
+    )),
+     'language' => 'eo',
+     'dc_creator' => 'klanestro',
+     'href' => 'http://smart.fm/items/918314',
+     'id' => 918314,
+  )),
+)

@@ -110,6 +110,7 @@ function showphp_Smartfm($SFvorto)
 				}
 
 	//	print_r($SFvorto);
+	var_export($SFvorto);
 		
 	}
 

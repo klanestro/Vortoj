@@ -6,6 +6,9 @@
 
 $vorto = $_GET['vorto']; // Get the Word from Outer Space and Search for it!
 
+
+
+
 if (isset($vorto))
 	{
 	echo " Your Direct search was " . $vorto .  ' </br> '; 
@@ -28,52 +31,53 @@ if (isset($vorto))
 //				:project gutenburg, pg
 //				:google books, gb
 //  BUT NEXT UP ЄЭ smart.fm  
+// it also assumes epo-eng
 
-$AVurl1 = "http://vortaro.us.to/ajax/epo/eng/"; 
-$AVurl2 = "/?callback=";
-$AVfinalurl= $AVurl1 . $vorto . $AVurl2;
-
-
-$AVcontent = file_get_contents($AVfinalurl) ;
-
-// Now we need to trim the () jsonp to json
-$AVcontent = substr($AVcontent, 1);
-$AVcontent = substr($AVcontent,0,-1);
-
-$AVDecode = json_decode($AVcontent);
-print_r($AVDecode);
+function getphp_AlexVortaro ($vorto)
+	{
+		$AVurl1 = "http://vortaro.us.to/ajax/epo/eng/"; 
+		$AVurl2 = "/?callback=";
+		$AVfinalurl= $AVurl1 . $vorto . $AVurl2;
 
 
-/* 
+		$AVcontent = file_get_contents($AVfinalurl) ;
 
-// /* 
- 	if(isset( $AVcontent)) { 									// DEBUG CODE
- 	echo "json_decode set AVcontent" . ' </br> ';
- 	} else {
- 	echo "something fishy here" . ' </br> ';
- 	}
- 	
- if (empty($AVcontent)){
- 	echo "EMPTY EMPTY" . ' </br> ';
- 	} else {
- 	echo "Not Empty". ' </br> ';
- 	}
-print_r(json_decode($AVcontent));
+		// Now we need to trim the () jsonp to json
+		$AVcontent = substr($AVcontent, 1);
+		$AVcontent = substr($AVcontent,0,-1);
 
+		$AVDecode = json_decode($AVcontent);
+		
+		return ($AVDecode);
+//		print_r($AVDecode);
 
-// echo $AVDecode . ' </br> ';
-// 
- 
-// Why can't I echo or access information with $AVDecode? Is it something with
-// jsonp?
-
-// echo $AVcontent;
-echo $AVfinalurl . ' </br> '; // DEBUG CODE 
-echo $AVcontent . ' </br> ';   // DEBUG CODE 
-// $AVDecode = (json_decode($AVcontent)); // Doesn't seem to matter which way
+//		echo '<br></br>';
+//		echo $AVDecode ->text;
+//		echo '<br></br>';
+	}
 
 
-*/
+function getphp_Smartfm($vorto)
+	{
+		echo 'smartttt';
+		$SFurl="http://api.smart.fm/items/matching/";
+		// $SFurl2=urlencode($vorto); // +".json";
+		$SFurl3="?language=eo&translation_language=en";
+		$SFfinalurl = $SFurl . $vorto . ".json" . $SFurl3;  // you can change .json to .xml
+
+		$SFcontent = file_get_contents($SFfinalurl);
+		$SFDecode = json_decode($SFcontent);
+
+		// make this smart
+//		print_r($SFDecode);	
+		return ($SFDecode);
+	}
+	
+	
+print_r(getphp_AlexVortaro ($vorto));
+print_r(getphp_Smartfm($vorto));
+
+
 
 ?>
 

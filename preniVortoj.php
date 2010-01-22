@@ -81,7 +81,7 @@ function showphp_AlexVortaro ($AVvorto)
 	{
 	$AVvortoshow = $AVvorto->text;
 	echo $AVvortoshow;
-	
+	echo '<br></br>';
 	}
 
 showphp_AlexVortaro ($AVvorto);
@@ -90,41 +90,31 @@ showphp_AlexVortaro ($AVvorto);
 
 function showphp_Smartfm($SFvorto)
 {
-   // $objects is the array with all those objects
-foreach($SFvorto as $object)
-{
-  echo $object->cue->language; // language
-
-  foreach($object->responses as $response)
-  {
-    // if there are no quizzes, we skip the part below
-    // we skip it because $object->quizzes will produce a warning or a notice
-    // if "quizess" is not a member of the $object
-    if(!isset($object->responses))
-    {
-      continue;
-    }
-// print_r($response);  //works
-// print_r($response->quizzes); //works
-
-foreach($response->quizzes as $quiz)
-    {
-      echo $quiz->question; // question
-      echo $quiz->answer; // answer
-      echo '<br></br>';
-    }
-    // quizess
-    /*
-    foreach($response->quizzes as $quiz)
-    {
-      echo $quiz->question; 
-      echo $quiz->answer; 
-    }
-    */
-  }
-}
-   
-   
+   // $SFvorto is the array with all those objects
+	foreach($SFvorto as $object)
+		{	
+  			echo $object->cue->language; 
+  			echo '  ';
+  			
+			foreach($object->responses as $response)
+				{
+   					 // if there are no quizzes, we skip the part below
+    				// we skip it because $object->quizzes will produce a warning or a notice
+    				// if "quizess" is not a member of the $object
+   		 			if(!isset($object->responses))
+  						  {
+  						    continue;
+  						  }
+  			  
+					foreach($response->quizzes as $quiz)
+			 		   	{ 
+      						echo $quiz->question; // question
+      						echo '  ';
+      						echo $quiz->answer; // answer
+      						echo '<br></br>';
+    					}
+				}
+		}
 }
 
 

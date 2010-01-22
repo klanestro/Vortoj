@@ -99,18 +99,18 @@ function showphp_Smartfm($SFvorto)
  				 {
  				 continue;
  				 }
-/*  Still does not work
+//  Still does not work not echoing Echo 
  				 // quizess
- 				 for($Sfvorto->quizzes as $quiz)
+ 				 foreach($SFvorto as $object)
  					 {
   					 	echo $quiz->question; // question
  						echo $quiz->answer; // answer
   					}
- */
+ 
 				}
 
 	//	print_r($SFvorto);
-	var_export($SFvorto);
+//	var_export($SFvorto);
 		
 	}
 

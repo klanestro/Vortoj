@@ -105,6 +105,10 @@ function showphp_Smartfm($SFvorto)
  					 {
   					 	echo $quiz->question; // question
  						echo $quiz->answer; // answer
+ 						$tmp1 = $quiz->question;
+ 						$tmp2 = $quiz->answer;
+ 						print_r($tmp1);
+ 						print_r($tmp2);
   					}
  
 				}

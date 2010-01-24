@@ -36,7 +36,6 @@ if (isset($vorto))
 //						out a way to get to this info.
 //				:project gutenburg, pg
 //				:google books, gb
-//  BUT NEXT UP ЄЭ smart.fm  
 // it also assumes epo-eng
 
 function getphp_AlexVortaro ($vorto)
@@ -119,9 +118,11 @@ function showphp_Smartfm($SFvorto)
 
 
 showphp_Smartfm($SFvorto);
-// print_r($SFvorto);
+ print_r($SFvorto);
 
 ?>
 
 </body>
 </html>
+
+// ★✩ From http://www.jaisenmathai.com/blog/2009/03/31/how-to-quickly-integrate-with-twitters-oauth-api-using-php/

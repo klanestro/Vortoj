@@ -89,12 +89,9 @@ function showphp_Smartfm($SFvorto)
 {
    // $SFvorto is the array with all those objects
 	foreach($SFvorto as $object)
-		{	
-  			echo $object->cue->language; 
-  			echo '  ';
-  			
+		{	  			
 			foreach($object->responses as $response)
-				{
+				{				
    					 // if there are no quizzes, we skip the part below
     				// we skip it because $object->quizzes will produce a warning or a notice
     				// if "quizess" is not a member of the $object
@@ -104,10 +101,16 @@ function showphp_Smartfm($SFvorto)
   						  }
   			  
 					foreach($response->quizzes as $quiz)
-			 		   	{ 
-      						echo $quiz->question; // question
-      						echo '  ';
-      						echo $quiz->answer; // answer
+			 		   	{	
+      						echo '<' . $object->cue->language . '>'; 
+      						echo $quiz->answer ; 
+							echo '</' . $object->cue->language . '>'; 
+							echo ':  ';
+      						
+      						echo '<' . $response->language . '>';
+      						echo $quiz->question; 
+      						echo '</' . $response->language . '>';
+
       						echo '<br></br>';
     					}
 				}
@@ -120,7 +123,9 @@ function showphp_Smartfm($SFvorto)
 
 showphp_AlexVortaro (getphp_AlexVortaro ($vorto));
 showphp_Smartfm(getphp_Smartfm($vorto));
- print_r(getphp_Smartfm($vorto));
+
+
+ // print_r(getphp_Smartfm($vorto));
 
 
 

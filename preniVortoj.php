@@ -8,7 +8,10 @@ error_reporting(E_ALL);
 ini_set('display_errors', TRUE);
 ini_set('display_startup_errors', TRUE);
 
-$vorto = $_GET['vorto']; // Get the Word from Outer Space and Search for it!
+$vorto = $_GET['vorto']; // Get the Word the the URL. 
+// Example  http://localhost/Users/briancarpenter/Sites/Vortoj/preniVortoj.php?vorto=fumi
+// The text before the ? is the url the ?vorto=  the direction to the computer to search for the 
+// word after the =
 
 
 

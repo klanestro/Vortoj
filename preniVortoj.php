@@ -3,6 +3,7 @@
 
 <?php
 // Created by Talisman 01/2010 ★✩ 
+
 error_reporting(E_ALL);
 ini_set('display_errors', TRUE);
 ini_set('display_startup_errors', TRUE);
@@ -71,9 +72,6 @@ function getphp_Smartfm($vorto)
 	}
 	
 		
-$AVvorto = getphp_AlexVortaro ($vorto);
-$SFvorto = getphp_Smartfm($vorto);
-
 
 
 function showphp_AlexVortaro ($AVvorto)
@@ -83,7 +81,7 @@ function showphp_AlexVortaro ($AVvorto)
 	echo '<br></br>';
 	}
 
-showphp_AlexVortaro ($AVvorto);
+
 
 
 
@@ -116,13 +114,23 @@ function showphp_Smartfm($SFvorto)
 		}
 }
 
+// ★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩
+// ★✩ This is Where we FINALLY get to Execute all the Hard Work   ★✩
+// ★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩
 
-showphp_Smartfm($SFvorto);
- print_r($SFvorto);
+showphp_AlexVortaro (getphp_AlexVortaro ($vorto));
+showphp_Smartfm(getphp_Smartfm($vorto));
+ print_r(getphp_Smartfm($vorto));
+
+
+
+
+
+// ★✩ Integrate With http://www.jaisenmathai.com/blog/2009/03/31/how-to-quickly-integrate-with-twitters-oauth-api-using-php/
+
 
 ?>
 
 </body>
 </html>
 
-// ★✩ From http://www.jaisenmathai.com/blog/2009/03/31/how-to-quickly-integrate-with-twitters-oauth-api-using-php/

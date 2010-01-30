@@ -7,26 +7,46 @@
 error_reporting(E_ALL);
 ini_set('display_errors', TRUE);
 ini_set('display_startup_errors', TRUE);
-
-$vorto = $_GET['vorto']; // Get the Word the the URL. 
-// Example  http://localhost/Users/briancarpenter/Sites/Vortoj/preniVortoj.php?vorto=fumi
-// The text before the ? is the url the ?vorto=  the direction to the computer to search for the 
-// word after the =
+ 
 
 
-
-
-if (isset($vorto))
-	{
-	echo " Your Direct search was " . $vorto .  ' <br></br> '; 
-	} else {
-		$Help = "No Vorto -> add ?vorto=TheWordYouWant to the end of this website";
-		echo $Help;
-	}
+	if (isset($_GET['vorto']))
+		{
+			$vorto = $_GET['vorto']; 
+				/* Get the Word the the URL. 
+  				Example  http://localhost/Users/briancarpenter/Sites/Vortoj/preniVortoj.php?vorto=fumi
+				The text before the ? is the url the ?vorto=  the direction to the computer to search for the 
+				word after the =
+				*/
+		//	echo " Your Direct search was " . $vorto .  ' <br></br> '; 
+		} else {
+			$Help = "No Vorto -> add ?vorto=TheWordYouWant to the end of this website";
+			echo $Help;
+		}
+	if (isset($_POST['vorto']))
+		{
+			$pvorto = $_POST['vorto'];
+		//	echo " Your Direct search was " . $vorto .  ' <br></br> '; 
+		} else {
+			$Help = "No Post";
+		//	echo $Help;
+		}
 	
+showphp_AlexVortaro (getphp_AlexVortaro ($vorto));
+showphp_Smartfm(getphp_Smartfm($vorto));
 
 
-// Now Lets Search Alex's Vortaro, It uses jsonp
+ // print_r(getphp_Smartfm($vorto));
+
+
+
+	
+	
+// ★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩
+// ★✩ This is Where we FINALLY get to use the Hard Work           ★✩
+// ★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩
+
+// Search Alex's Vortaro, It uses jsonp
 //	ex. http://vortaro.us.to/ajax/epo/eng/petas/?callback=?
 
 /* Future Feature inproved language functinality */
@@ -58,7 +78,9 @@ function getphp_AlexVortaro ($vorto)
 		$AVDecode = json_decode($AVcontent);
 		
 		return ($AVDecode);
+	// This works really well,  Thank you Alex
 	}
+	
 
 
 function getphp_Smartfm($vorto)
@@ -120,15 +142,9 @@ function showphp_Smartfm($SFvorto)
 		}
 }
 
-// ★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩
-// ★✩ This is Where we FINALLY get to Execute all the Hard Work   ★✩
-// ★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩
-
-showphp_AlexVortaro (getphp_AlexVortaro ($vorto));
-showphp_Smartfm(getphp_Smartfm($vorto));
 
 
- // print_r(getphp_Smartfm($vorto));
+
 
 
 

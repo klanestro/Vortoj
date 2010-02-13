@@ -18,7 +18,6 @@ echo count($frequency);
 
 
 for($i=0; $i<count($frequency); $i++) {
-	$frequency[$i][$0] = $vort
 
    showphp_AlexVortaro(getphp_AlexVortaro($frequency[$vort]));
    showphp_Smartfm($frequency[$vort]); 

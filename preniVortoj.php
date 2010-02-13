@@ -8,8 +8,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', TRUE);
 ini_set('display_startup_errors', TRUE);
  
-
-
+ /*
 	if (isset($_GET['vorto']))
 		{
 			$vorto = $_GET['vorto']; 
@@ -17,7 +16,7 @@ ini_set('display_startup_errors', TRUE);
   				Example  http://localhost/Users/briancarpenter/Sites/Vortoj/preniVortoj.php?vorto=fumi
 				The text before the ? is the url the ?vorto=  the direction to the computer to search for the 
 				word after the =
-				*/
+				
 		//	echo " Your Direct search was " . $vorto .  ' <br></br> '; 
 		} else {
 			$Help = "No Vorto -> add ?vorto=TheWordYouWant to the end of this website";
@@ -31,20 +30,20 @@ ini_set('display_startup_errors', TRUE);
 			$Help = "No Post";
 		//	echo $Help;
 		}
-	
-showphp_AlexVortaro (getphp_AlexVortaro ($vorto));
-showphp_Smartfm(getphp_Smartfm($vorto));
 
+*/
 
- // print_r(getphp_Smartfm($vorto));
-
-
-
-	
-	
 // ★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩
-// ★✩ This is Where we FINALLY get to use the Hard Work           ★✩
+// ★✩               This    is the  Easy Work                     ★✩
 // ★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩
+
+// showphp_AlexVortaro (getphp_AlexVortaro ($vorto));
+// showphp_Smartfm(getphp_Smartfm($vorto));
+
+// ★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩★✩
+
+
+
 
 // Search Alex's Vortaro, It uses jsonp
 //	ex. http://vortaro.us.to/ajax/epo/eng/petas/?callback=?
@@ -96,7 +95,7 @@ function getphp_Smartfm($vorto)
 		return ($SFDecode);
 	}
 	
-		
+
 
 
 function showphp_AlexVortaro ($AVvorto)

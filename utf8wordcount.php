@@ -3,6 +3,7 @@
 <!>
 <?php
 
+
 //$text = "A very nice únÌcÕdë text. Something nice to think about if you're into Unicode.";
 $eotext = file_get_contents('Alice en Mirlando.txt');
 
@@ -13,10 +14,12 @@ $words = utf8_str_word_count($eotext, 1); // use this function if you care about
 $frequency = array_count_values($words);
 
 arsort($frequency);
-
+/*
 echo '<pre>';
 print_r($frequency);
+echo count($frequency);
 echo '</pre>';
+*/
 
 function utf8_str_word_count($string, $format = 0, $charlist = null)
 {
